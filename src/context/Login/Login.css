@@ -1,0 +1,129 @@
+body{
+    background-color: rgb(79, 79, 90);
+    margin:0;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.login-content{
+    position: absolute;
+	top: calc(50% - 75px);
+	left: calc(45% - 50px);
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+	z-index: 2;
+}
+
+.form-container{
+    width:380px;
+    height:582px;
+    background:#fbfbfb;
+    border-radius:8px;
+    box-shadow:0 0 40px -10px #000;
+    margin:calc(50vh - 220px) auto;
+    padding:20px 30px;
+    max-width:calc(100vw - 40px);
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+    position:relative
+}
+.submit{
+    width: 325px;
+    height: 48px;
+    background: #3751FF;
+    border: 8px solid #3751FF;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #f8f6f4;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24);
+    border-radius: 8px;
+}
+.submit:hover{
+	opacity: 0.8;
+}
+.submit:active{
+	opacity: 0.6;
+}
+
+.title-logo{
+    font-style: normal;
+    font-weight: 0px;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #A4A6B3;
+    opacity: 0.7;
+    padding-bottom:15px;
+    margin-top: 0px;
+}
+
+.title-intruction{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #9FA2B4;
+    padding-bottom:25px;
+}
+
+.icon{
+    width:60px;
+    height:60px;
+    display: block;
+    margin: 0px auto;
+    margin-top: 1px;
+}
+
+.title-registration{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #9FA2B4;
+    margin-top: 28px;
+}
+
+.label-incorrect-parameters{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #f70000;
+    margin-top: -20px;
+    margin-bottom: 0px;
+    
+}
+
+.home-content{
+    text-align: center;
+    margin:10px 0;
+    padding-bottom:10px;
+    width:180px;
+    color:#dedee4;
+    border-bottom:3px solid #d4d4de;
+    font-size: 25px;
+    margin-top: 15%;
+}
+
+
+
