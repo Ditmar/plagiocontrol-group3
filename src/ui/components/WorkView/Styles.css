@@ -1,0 +1,88 @@
+body{
+    background: #F7F8FC;;
+}
+
+.container-workview{
+    font-family: 'Mulish';
+    font-style: normal;
+}
+
+.top, .middle, .top-autor, .top-details, .middle-description, .middle-number-page, .middle-image{
+    float: left;
+}
+
+.top {
+    width: 51%;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: -20px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.middle{
+    width: 51%;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.middle-description, .middle-number-page{
+    margin-top: 60px;
+}
+
+
+.top-autor{
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    color: #252733;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+.top-details {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    letter-spacing: 0.2px;
+    color: #3751FF;
+    padding-top: 20px;
+    padding-left: 120px;
+}
+
+
+
+.middle-description{
+    width: 152px;
+    height: 60px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #252733;
+    padding-left: 25px;
+   
+}
+
+.middle-number-page{
+    margin-left: 100px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #9FA2B4;
+    padding-right: 1px;
+}
+
+.middle-image{
+    padding-top: 10px;
+    
+}
+
+.image{
+    width: 200px;
+    height: 250px;
+}
