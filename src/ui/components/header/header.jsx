@@ -3,13 +3,13 @@ import photo from './assets/img/photo.jpg'
 import '../header/header.css'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { IoIosNotifications } from 'react-icons/io'
-const Header = () => {
+export const Header = () => {
     return(
         <header>
             <div className='wrapper'>
                 <h2 className='name-navbar'>Overview</h2>    
-                <div className='buscador'>
-                    <input type='text' className='buscador'/>
+                <div className='search'>
+                    <input type='text' className='search-engine'/>
                         <button className='search'>
                         <AiOutlineSearch/>
                         </button>
@@ -17,7 +17,6 @@ const Header = () => {
                         <IoIosNotifications/>
                         </button>
                 </div>
-       
                 <div>
                     <hr className='v'/>
                 </div>
@@ -25,10 +24,9 @@ const Header = () => {
                     <h3 className='name'>Mohamed</h3>
                 </div>
                 <div>
-                    <img src={ photo } className='foto'/>
+                    <img src={ photo } className='photo'/>
                 </div>
              </div>
         </header>
     )
 }
-export default Header
