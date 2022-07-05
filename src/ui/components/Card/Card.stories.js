@@ -1,8 +1,8 @@
-import React from "react";
-import { Cards } from "./Cards";
+import React from 'react';
+import { CardsFather } from './CardFather';
 export default {
     title: 'ui/components/card',
-    component: Cards,
+    component: CardsFather,
 }
-const Template = args => <Cards  {...args}/>
+const Template = args => <CardsFather  {...args}/>
 export const Card = Template.bind({});
