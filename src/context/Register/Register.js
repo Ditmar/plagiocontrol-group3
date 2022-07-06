@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import { Grid, Paper, Avatar, Typography} from '@material-ui/core';
+//import {useForm} from '../../hook/useForm.js'
 import './Register.css';
 
 export const Register = () => {
-const paperStyle={padding:'10px 30px',width:'540px', height:'655px' ,margin:'30px auto',radius:'8px'}
+const paperStyle={padding:'10px 30px',width:'540px', height:'670px' ,margin:'30px auto',radius:'8px'}
 const headerStyle={width:'494px',height:'24px',top:'100px',left:'32px',opacity:'70%'}
 const headerStyle2={width:'494px',height:'30px',top:'156px',left:'32px'}
 const headerStyle3={width:'494px',height:'20px',top:'198px',left:'32px'}
