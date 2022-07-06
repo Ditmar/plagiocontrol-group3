@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import "./Login.css"
-import Title from "./components/title/Title";
-import Label from "./components/label/Label";
-import Input from "./components/input/Input"
+import React, { useState } from 'react';
+import './Login.css'
+import Title from './components/title/Title';
+import Label from './components/label/Label';
+import Input from './components/input/Input'
+import logo from   './logo.png'
 
 export const Login = () => {
-    const [ user, setUser ] = useState("");
+    const [ user, setUser ] = useState('');
     
-    const [ password, setPassword ] = useState("");
+    const [ password, setPassword ] = useState('');
     
     const [ isLogin, setIsLogin ] = useState(false);
     
@@ -43,18 +44,18 @@ export const Login = () => {
     return (
         <div className='login-container'>
             {   isLogin ? 
-                <div className="home-content">
+                <div className='home-content'>
                     <h1>Hola! {user}</h1>
                     <p>Estas Logeada</p>
                 </div>
                 : 
-                <div className="form-container">
-                    <img className="icon" src="https://previews.123rf.com/images/cidepix/cidepix1608/cidepix160801289/61770391-redondo-de-color-azul-icono-del-logotipo-y-elementos-de-dise%C3%B1o.jpg"></img>
-                    <h1 className="title-logo">Plagio Control</h1>
+                <div className='form-container'>
+                    <img className='icon' src={logo}></img>
+                    <h1 className='title-logo'>Plagio Control</h1>
                     <Title text='Login Plagio Control'/>
-                    <h2 className="title-intruction">Enter your email and password below</h2>
+                    <h2 className='title-intruction'>Enter your email and password below</h2>
                     { hasError &&
-                        <p className="label-incorrect-parameters">
+                        <p className='label-incorrect-parameters'>
                             Su email o contraseña son incorrectos o no esta registrado en nuestro sistema
                         </p>
                     }
@@ -79,7 +80,7 @@ export const Login = () => {
                     <button onClick={handleSubmit} className='submit'>
                         Log In
                     </button>
-                    <p className="title-registration">No tienes cuenta? <a href="">Sign up</a> </p>
+                    <p className='title-registration'>No tienes cuenta? <a className ='sign-up' href='#'>Sign up</a> </p>
                 </div>
             }
         </div>
