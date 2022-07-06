@@ -1,9 +1,9 @@
 import React from "react";
 import "./Styles.css"
 
-export const Text = ({text,classname}) => {
+export const Text = ({text}) => {
     return (
-        <p className={classname}>
+        <p>
             {text}
         </p>
     )
