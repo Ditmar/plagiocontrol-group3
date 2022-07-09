@@ -1,17 +1,23 @@
 import React, {useState} from 'react';
 import { Grid, Paper, Avatar, Typography} from '@material-ui/core';
+import D from './assets/img/D.png'
 //import {useForm} from '../../hook/useForm.js'
 import './Register.css';
 
 export const Register = () => {
-const paperStyle={padding:'10px 30px',width:'540px', height:'670px' ,margin:'30px auto',radius:'8px'}
-const headerStyle={width:'494px',height:'24px',top:'100px',left:'32px',opacity:'70%'}
-const headerStyle2={width:'494px',height:'30px',top:'156px',left:'32px'}
-const headerStyle3={width:'494px',height:'20px',top:'198px',left:'32px'}
-const headerStyle4={width:'144px',height:'20px',top:'571px',left:'177px'}
-const headerStyle5={width:'85px',height:'13px',top:'354px',left:'441px'}
+const paperStyle={padding:'10px 30px',width:'540px', height:'631px' ,margin:'30px auto',radius:'8px'}
+const headerStyle={width:'494px',height:'24px',top:'100px',left:'32px',opacity:'70%',fontWeight:'bold',fontSize:'19px',fontFamily:'Mulish',Weigth:'700',size:'19px',lineHeight:'23.85px',letter:'0.4px',align:'center'}
+const headerStyle2={width:'494px',height:'30px',top:'156px',left:'32px',fontWeight:'bold',fontSize:'24px',fontFamily:'Mulish',Weigth:'700',size:'24px',lineHeight:'30.12px',letter:'0.3px',align:'center'}
+const headerStyle3={width:'494px',height:'20px',top:'198px',left:'32px',fontWeight:'regular',fontSize:'14px',fontFamily:'Mulish',Weigth:'400',size:'14px',lineHeight:'20px',letter:'0.3px',align:'center'}
+const headerStyle4={width:'494px',height:'16px',fontWeight:'bold',fontSize:'12px',fontFamily:'Mulish',Weigth:'700',size:'12px',lineHeight:'15.06px',letter:'0.3px'}
+const headerStyle5={width:'494px',height:'16px',fontWeight:'bold',fontSize:'12px',fontFamily:'Mulish',Weigth:'700',size:'12px',lineHeight:'15.06px',letter:'0.3px'}
+const headerStyle6={width:'85px',height:'13px',top:'354px',left:'441px',fontWeight:'regular',fontFamily:'Mulish',Weigth:'400',size:'10px',lineHeight:'12.55px',letter:'0.1px',align:'right'}
+const headerStyle7={width:'494px',height:'16px',fontWeight:'bold',fontSize:'12px',fontFamily:'Mulish',Weigth:'700',size:'12px',lineHeight:'15.06px',letter:'0.3px'}
+const headerStyle8={width:'149px',height:'20px',top:'571px',left:'177px',fontWeight:'regular',fontFamily:'Mulish',Weigth:'400',size:'14px',lineHeight:'20px',letter:'0.3px',align:'center'}
+const headerStyle9={width:'51px',height:'20px',fontWeight:'semibold',fontFamily:'Mulish',Weigth:'600',size:'14px',lineHeight:'20px',letter:'0.2px',align:'center'}
 const avatarStyle={width:'48px', height:'48px',background:'blue'}
 //const botonStyle={width:'490px',margin:'2em auto', padding:'0.25em 1em'};
+
     const [input, setInput] = useState({
         email: '',
         password: '',
@@ -70,9 +76,12 @@ const avatarStyle={width:'48px', height:'48px',background:'blue'}
                     <Avatar style={avatarStyle}>   
                     <svg>
                         <ellipse/>
+                        <img src={ D } className='photo'/>
                     </svg>
                     </Avatar>
-                    <h6 style={headerStyle}>Plagio Control</h6>
+                    <Typography style={headerStyle} variant='caption'>    
+                                Plagio Control
+                    </Typography>
                 </Grid>
                 <Grid align='center'>  
                     <h2 style={headerStyle2}>Login Plagio Control</h2>
@@ -82,35 +91,46 @@ const avatarStyle={width:'48px', height:'48px',background:'blue'}
                 </Grid>
                 <form onSubmit={handleSubmit}>
                     <br></br>
-                    <label>EMAIL</label>
+                    <Typography style={headerStyle4} variant='caption'>    
+                            EMAIL
+                    </Typography>
+                    
                     <input 
                         type='email'
                         name='email'
-                        placeholder='Ingrese su email'
+                        placeholder='Email address'
                         value={input.email}
                         onChange={onInputChange}
                         onBlur={validateInput}
                         required></input>
                     {error.email && <span className='err'>{error.email}</span>}
                     <br></br>
-                    <label>PASSWORD <Typography style={headerStyle5} variant='caption'>    
-                        <p>ForgoutPassword?</p>
-                    </Typography></label>
+                    
+                    <Typography style={headerStyle5} variant='caption'>    
+                            PASSWORD
+                            <Typography style={headerStyle6} variant='caption'>    
+                                ForgoutPassword?
+                            </Typography>
+                    </Typography>
+                    
                     <input 
                         type='password'
                         name='password'
-                        placeholder='Ingrese su contraseña'
+                        placeholder='Password'
                         value={input.password}
                         onChange={onInputChange}
                         onBlur={validateInput}
                         required></input>
                     {error.password && <span className='err'>{error.password}</span>}
                     <br></br>
-                    <label>RE-PASSWORD</label>
+                    <Typography style={headerStyle7} variant='caption'>    
+                    RE-PASSWORD
+                    </Typography>
+                    
                     <input 
                         type='password'
                         name='confirmPassword'
-                        placeholder='Ingrese su contraseña'
+                        placeholder='Password'
                         value={input.confirmPassword}
                         onChange={onInputChange}
                         onBlur={validateInput}
@@ -118,11 +138,14 @@ const avatarStyle={width:'48px', height:'48px',background:'blue'}
                     {error.confirmPassword && <span className='err'>{error.confirmPassword}</span>}
                     <br></br>
                     <button type='submit' value='enviar'>Submit</button>
-                        <Grid align='center'>
-                            <Typography style={headerStyle4} variant='caption'>    
-                                Ya tienes una cuenta?  <a href="">Login</a>
-                            </Typography>
-                        </Grid>
+                    <Grid align='center'>
+                        <Typography style={headerStyle8} variant='caption'>    
+                            Ya tienes una cuenta?
+                        </Typography>
+                        <Typography style={headerStyle9} variant='caption'>    
+                            <a href='/login'>Login</a>
+                        </Typography>
+                    </Grid>
                 </form>
             </Paper>
         </Grid>

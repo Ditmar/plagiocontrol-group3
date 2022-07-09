@@ -12,10 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-label{
-  width: 30.875rem;
-  height: 1rem;
-}
 a{
   width: 3.188rem;
   height: 1.25rem;
@@ -35,7 +31,7 @@ p{
   letter-spacing: 0.006rem;
   color: #9FA2B4;
 }
-input, button{
+input{
   width: 30.875rem;
   height: 2.625rem;
   top:1.375rem;
