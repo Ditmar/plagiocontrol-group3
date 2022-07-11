@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { Grid, Paper, Avatar, Typography} from '@material-ui/core';
-import D from './assets/img/D.png'
-//import {useForm} from '../../hook/useForm.js'
+import D from './assets/img/D.png';
+import {useForm} from '../../hooks/useForm.js';
 import './Register.css';
+
 
 export const Register = () => {
 const paperStyle={padding:'10px 30px',width:'540px', height:'631px' ,margin:'30px auto',radius:'8px'}
@@ -15,60 +16,55 @@ const headerStyle6={width:'85px',height:'13px',top:'354px',left:'441px',fontWeig
 const headerStyle7={width:'494px',height:'16px',fontWeight:'bold',fontSize:'12px',fontFamily:'Mulish',Weigth:'700',size:'12px',lineHeight:'15.06px',letter:'0.3px'}
 const headerStyle8={width:'149px',height:'20px',top:'571px',left:'177px',fontWeight:'regular',fontFamily:'Mulish',Weigth:'400',size:'14px',lineHeight:'20px',letter:'0.3px',align:'center'}
 const headerStyle9={width:'51px',height:'20px',fontWeight:'semibold',fontFamily:'Mulish',Weigth:'600',size:'14px',lineHeight:'20px',letter:'0.2px',align:'center'}
+const headerStyle10={width:'446px',height:'20px',top:'15px',left:'24px',fontWeight:'semibold',fontFamily:'Mulish',Weigth:'600',size:'14px',lineHeight:'20px',letter:'0.2px',align:'center',color:'#FFFFFF'}
 const avatarStyle={width:'48px', height:'48px',background:'blue'}
-//const botonStyle={width:'490px',margin:'2em auto', padding:'0.25em 1em'};
-
-    const [input, setInput] = useState({
-        email: '',
-        password: '',
-        confirmPassword: ''
-    });
-    const [error, setError] = useState({
-        email:'',
-        password:'',
-        confirmPassword:''
-    })
-    const onInputChange = e => {
-        const { name , value } = e.target;
-        setInput(prev => ({
-            ...prev,
-            [name]: value
-        }));
-        validateInput(e);
-    }
-    const handleSubmit = (e) => {return}
-    const validateInput = e => {
-        let { name , value } = e.target;
-        setError( prev => {
-            const stateObj = { ...prev, [name]: "" };
-            switch (name){
-                case "email":
-                    if(!value && value !== null){
-                        stateObj[name] = "Porfavor Ingrese Email";
-                    }
-                    break;
-                case "password":
-                    if(!value){
-                        stateObj[name] = "porfavor ingresa una contraseña";
-                    }else if(input.confirmPassword && value !== input.confirmPassword) {
-                        stateObj["confirPassword"]="Password y confirmacion del password no son identicas";
-                    }else {
-                        stateObj["confirmPassword"] = input.confirmPassword ? "" : error.confirmPassword;
-                    }
-                    break;
-                case "confirmPassword":
-                    if(!value){
-                        stateObj[name]="porfavor ingresa una contraseña de confirmacion";
-                    }else if(input.password && value !== input.password) {
-                        stateObj[name]="Password y confirmacion del password no son identicas";
-                    }
-                    break;
-                default:
+const [input,setInput, error,setError] = useForm();
+    
+const onInputChange = e => {
+    const { name , value } = e.target;
+    setInput(prev => ({
+        ...prev,
+        [name]: value
+    }));
+    validateInput(e);
+};
+const validateInput = e => {
+    let { name , value } = e.target;
+    setError( prev => {
+        const stateObj = { ...prev, [name]: "" };
+        switch (name){
+            case "email":
+                if(!value && value !== null){
+                    stateObj[name] = "Porfavor Ingrese Email";
+                }
                 break;
-            }
-            return stateObj;
-        }); 
-    }
+            case "password":
+                if(!value){
+                    stateObj[name] = "porfavor ingresa una contraseña";
+                }else if(input.confirmPassword && value !== input.confirmPassword) {
+                    stateObj["confirPassword"]="Password y confirmacion no coinciden";
+                }else {
+                    stateObj["confirmPassword"] = input.confirmPassword ? "" : error.confirmPassword;
+                }
+                break;
+            case "confirmPassword":
+                if(!value){
+                    stateObj[name]="porfavor ingrese la contraseña de confirmacion";
+                }else if(input.password && value !== input.password) {
+                    stateObj[name]="Password y confirmacion no coinciden";
+                }
+                break;
+            default:
+            break;
+        }
+        return stateObj;
+    }); 
+}
+const headleSubmit = (e)=>{
+    e.preventDefault();
+    console.log(input);
+    alert("Send to api");
+}
     return (
         <Grid>
             <Paper elevation={20} style={paperStyle}>
@@ -89,7 +85,7 @@ const avatarStyle={width:'48px', height:'48px',background:'blue'}
                         Enter your emai and password below
                     </Typography>
                 </Grid>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={headleSubmit}>
                     <br></br>
                     <Typography style={headerStyle4} variant='caption'>    
                             EMAIL
@@ -137,7 +133,11 @@ const avatarStyle={width:'48px', height:'48px',background:'blue'}
                         required></input>
                     {error.confirmPassword && <span className='err'>{error.confirmPassword}</span>}
                     <br></br>
-                    <button type='submit' value='enviar'>Submit</button>
+                    <button type='submit' value='enviar'>
+                        <Typography style={headerStyle10} variant='caption'>    
+                            Sing In
+                        </Typography>
+                    </button>
                     <Grid align='center'>
                         <Typography style={headerStyle8} variant='caption'>    
                             Ya tienes una cuenta?
