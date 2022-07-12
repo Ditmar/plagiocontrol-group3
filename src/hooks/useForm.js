@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useForm = (initForm) => {
+const useForm = (initForm) => {
     const [form, setForm] = useState(initForm);
     const [input, setInput] = useState({
         email: '',
@@ -20,4 +20,4 @@ export const useForm = (initForm) => {
     };
     return [input,setInput, error,setError, form, handlerChangeForm, handlerResetForm];
 }
-//export default useForm;
+export default useForm;

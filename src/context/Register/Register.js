@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { Grid, Paper, Avatar, Typography} from '@material-ui/core';
 import D from './assets/img/D.png';
-import {useForm} from '../../hooks/useForm.js';
+import useForm from '../../hooks/useForm';
+// import {headleSubmit,onInputChange} from '../Register/Utils/utils';
 import './Register.css';
 
 
